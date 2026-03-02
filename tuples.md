@@ -1,0 +1,249 @@
+
+1. Exercising tuples
+1a) Take five inputs from an user and save it in a tuple called my_tuple
+
+
+# Write your code here.
+
+
+
+
+
+
+
+a = input1("user 1: ")
+b = input("user 2: ")
+c = input("user 3: ")
+d = input("user 4: ")
+e = input("user 5: ")
+
+my_tuple = (a,b,c,d,e)
+
+
+
+
+1b. How do you assign a single element in a tuple?
+
+you can not assign a single element in tuple because they are immutable.  Once a tupel is created they can not be changed.
+
+
+
+# Write your code here.
+
+my_tuple = (1,)
+
+# you have to add a comma or it will treat it as a different type (integer, float, or string)
+
+
+
+
+
+
+
+1c. my_tuple = (1,2,3,4,3,2,1,2,3,5,4,3,2,1) Count the repeated integers and print the result on the console.
+
+
+# Write your code here.
+
+
+
+
+
+#creates my tuple and integer
+my_tuple = (1, 2, 3, 4, 3, 2, 1, 2, 3, 5, 4, 3, 2, 1)
+
+
+# track numbers already printed
+counted = set()
+
+#for loop statement
+for num in my_tuple:
+    if num not in counted:
+        count = my_tuple.count(num)
+        if count > 1:
+            print(num, "is repeated", count, "times")
+
+
+
+
+
+1d. my_tuple = my_tuple + my_tuple
+
+Proof that my_tuple in part c is different than the my_tuple in part d.
+
+
+
+my_tuple_c = (1, 2, 3, 4, 3, 2, 1, 2, 3, 5, 4, 3, 2, 1)
+
+my_tuple_d = my_tuple_c + my_tuple_c
+
+print(my_tuple_d)
+
+print(my_tuple_c)
+
+
+
+
+1e. Explain why the following operations aren’t legal for the tuple. Answer without using the Python.
+
+
+
+x = (1,2,3,4)
+
+x.append(1)
+#append is open to add something to list and only works on list.  Which is different then my_tuple which can not be changed and will not work.
+
+x[1] = "hello"
+#  1 is assigned to "hello" and it's immutable
+
+
+del x[2]
+# this del will not be legal for tuple because it's immutable
+
+
+
+2. Packing and unpacking tuples
+Python permits tuples to appear on the left side of an assignment operator, in which case variables in the tuple receive the corresponding values from the tuple on the right side of the assignment operator. Here’s a simple example:
+
+
+
+
+2a. What is the data type of each variable?
+
+the data type is integers. but sense they are in parentheses they create a tuple so they are tuple of integers.
+
+
+
+one = integer
+two = integer
+three = integer
+four = integer
+
+
+
+
+2b. Python has an extended unpacking feature, allowing an element marked with * to absorb any number of elements not matching the other elements. For example,
+
+
+
+
+
+
+x = (1, 2, 3, 4)
+a, b, *c = x
+a, b, c
+(1, 2, [3, 4])
+
+
+
+
+so the list [3,4] will be assigned to: c
+
+
+
+
+2c. What will be the result of a, *b, c = x?
+
+
+
+
+a, *b, c = x
+
+
+
+
+a will get first value is 1
+c will get last value is 4
+*b collects everything in between and creates a list
+
+
+
+
+code results
+1 [2,3] 4
+
+
+
+
+3. Memory management
+my_x = [100,200,300,400]
+
+
+
+
+Discuss how memory addresses are assigned to each index of the list and the tuple. Pay attention to new addresses & re-used addresses.
+
+
+
+each element has its own index starting with integer 0
+    
+#for ex.
+
+  #index (0, 1,  2,  3)         
+my_x = [100,200,300,400]
+  #index 0 , 1.0, 2.0,3.0  in memory block   
+
+
+with a total of 4 indexs
+
+  index (0, 1,   2,  3)    
+my_y = (200,300,400,500)
+  #index 0.0,1.0, 2.0,3.0    in memory block
+
+
+repeated elements will have the same index 
+
+
+
+my_x (list) is mutable and a new address is assigned; my_y (tuple) is immutable and non new address can be assigned to an index
+
+Index	my_x, list	my_y, tuple
+0	[100]		[200]
+1	[200]		[300]
+2	[300]		[400]
+3	[400]		[500]
+
+
+
+
+
+
+
+
+
+
+Challenges
+
+
+
+#  Its challenging to remember what symbols creates the tuple and list
+#  It's challening to think about index memory blocks and how it will be applied
+#  
+#
+#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
